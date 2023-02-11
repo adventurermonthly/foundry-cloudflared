@@ -1,0 +1,16 @@
+version: "3"
+services:
+  foundry:
+    env_file: ./env.d/foundry
+    image: felddy/foundryvtt:release
+    init: true
+    volumes:
+      - "./foundry:/data"
+    ports:
+      - 30000:30000
+    restart: unless-stopped
+  cloudflared:
+    env_file: ./env.d/cloudflared
+    image: cloudflare/cloudflared:latest
+    command: tunnel run
+    restart: unless-stopped
