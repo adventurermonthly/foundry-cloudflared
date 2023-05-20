@@ -5,7 +5,8 @@ services:
     image: felddy/foundryvtt:release
     init: true
     volumes:
-      - "./foundry:/data"
+      - "./foundry/data:/data"
+      - "./foundry/home:/home/foundry"
     ports:
       - 30000:30000
     restart: unless-stopped
