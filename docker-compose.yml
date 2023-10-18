@@ -5,10 +5,13 @@ services:
     image: felddy/foundryvtt:release
     init: true
     volumes:
+    # you will want to change this to wherever you want all of 
+    # the files and data for this foundry server to live.
+    # 
+    # i.e.
+    # 
+    # /path/to/a/folder/for/this:/data
       - "./foundry/data:/data"
-      - "./foundry/home:/home/foundry"
-    ports:
-      - 30000:30000
     restart: unless-stopped
   cloudflared:
     env_file: ./env.d/cloudflared
