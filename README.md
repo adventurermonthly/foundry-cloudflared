@@ -2,9 +2,11 @@
 
 Forked from [davebenvenuti/foundry-cloudflared](https://github.com/davebenvenuti/foundry-cloudflared)- a simple [FoundryVTT](https://foundryvtt.com) + [Cloudflare Tunnel](https://www.cloudflare.com/products/tunnel/) setup.
 
-## Requirements
+## Setup
 
-You should have [docker compose](https://docs.docker.com/compose/) installed either through [docker desktop](https://docs.docker.com/desktop/) or [docker engine](https://docs.docker.com/engine/) (at this point it comes as part of either) depending on your operating system and setup.
+### Docker Compose
+
+You should have [docker compose](https://docs.docker.com/compose/) installed either through [docker desktop](https://docs.docker.com/desktop/) or [docker engine](https://docs.docker.com/engine/).
 
 ### Cloudflare
 
@@ -12,8 +14,7 @@ You should have a cloudflare account (free) and you should [create a tunnel](htt
 
 When creating the tunnel, you can use `foundry:30000` for the hostname.  This will work for any foundry instances set up with this docker compose file, including multiple running on the same machine.
 
-You should have a tunnel token handy from setting up a cloudflare tunnel.
-
+Be sure to keep your tunnel token handy from setting up a cloudflare tunnel.
 
 ## Environment Variables
 
@@ -42,4 +43,6 @@ where
 - FOUNDRY_ADMIN_KEY - *set* your admin password here
 
 ### docker-compose.yml 
+
+You will also want to add a volume and pin a version in the docker-compose.yml file.  See the inline comments for guidance.
 
