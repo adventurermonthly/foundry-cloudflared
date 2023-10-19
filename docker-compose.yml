@@ -2,15 +2,24 @@ version: "3"
 services:
   foundry:
     env_file: ./env.d/foundry
+    # you will want to make sure you pin a version here to avoid
+    # potential foundry updates each time you restart the containers.
+    # 
+    # example
+    # felddy/foundryvtt:11.307
+    #
+    # otherwise, it will download the latest version and either require
+    # you to migrate data or hope your setup doesn't break (it will).
     image: felddy/foundryvtt:release
     init: true
     volumes:
-    # you will want to change this to wherever you want all of 
+    # you likely want to change this to wherever you want all of 
     # the files and data for this foundry server to live.
     # 
-    # i.e.
-    # 
-    # /path/to/a/folder/for/this:/data
+    # example
+    # /media/adventure-game/data:/data
+    #
+    # otherwise it will default to a directory named foundry in this directory
       - "./foundry/data:/data"
     restart: unless-stopped
   cloudflared:
