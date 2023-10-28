@@ -19,8 +19,8 @@ services:
     # example
     # /media/adventure-game/data:/data
     #
-    # otherwise it will default to a directory named foundry in this directory
-      - "./foundry/data:/data"
+    # otherwise it will default to a directory named foundry-data in this directory, which is also fine.
+      - "./foundry-data:/data"
     restart: unless-stopped
   cloudflared:
     env_file: ./env.d/cloudflared
