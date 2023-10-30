@@ -42,7 +42,15 @@ where
 - FOUNDRY_USERNAME - your username for https://foundryvtt.com/
 - FOUNDRY_ADMIN_KEY - *set* your admin password here
 
-### docker-compose.yml 
+### .env file
 
-You will also want to add a volume and pin a version in the docker-compose.yml file.  See the inline comments for guidance.
+Creat a file `.env` at the root of the project (same directory as `docker-compse.yml`).
+
+```
+VERSION=
+```
+- VERSION - foundry version number, i.e. something like **11.307**
+
+
+
 
